@@ -1,5 +1,21 @@
 #!/usr/bin/env lua
 
+-- Copyright (C) 2020 thisLight
+-- 
+-- This file is part of x.lua.
+-- 
+-- x.lua is free software: you can redistribute it and/or modify
+-- it under the terms of the GNU General Public License as published by
+-- the Free Software Foundation, either version 3 of the License, or
+-- any later version.
+-- 
+-- x.lua is distributed in the hope that it will be useful,
+-- but WITHOUT ANY WARRANTY; without even the implied warranty of
+-- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+-- GNU General Public License for more details.
+-- 
+-- You should have received a copy of the GNU General Public License
+-- along with x.lua.  If not, see <http://www.gnu.org/licenses/>.
 local function do_warn(msg)
     if warn then
         warn(msg)
@@ -67,6 +83,12 @@ local function repl(flags)
     -- subject to the following conditions:
     --
     -- The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+    -- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+    -- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
+    -- FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
+    -- COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
+    -- IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
+    -- CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
     if not io then
         do_warn("io library does not exists, exit.")
     else
