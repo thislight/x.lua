@@ -103,6 +103,8 @@ local function main(args)
         if string_startswith(value, "--packages=") then
             local packages_file_path = string.match(value, "--packages=(.*)")
             flags.packages_file = packages_file_path
+        elseif value == '--show-debug-info' then
+            flags.show_debug_info = true
         elseif (not string_startswith(value, "-")) then
             flags.script = value
         end
@@ -110,6 +112,12 @@ local function main(args)
     if not flags.packages_file then flags.packages_file = './.lua_packages' end
     if flags.script then
         run_script(flags)
+    elseif flags.show_debug_info then
+        print(_VERSION)
+        print("Package List File: " .. flags.packages_file)
+        print("Use Package List File: " ..
+                  tostring(table.pack(io.open(flags.packages_file))[1]))
+        print("luarepl: " .. tostring(pcall(require, 'repl')))
     else
         repl(flags)
     end
