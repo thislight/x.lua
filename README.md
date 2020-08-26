@@ -1,5 +1,5 @@
 # x.lua
-Lua launcher with package redirecting support.
+Lua launcher with package redirecting.
 
 ## Usage
 ### Basic
