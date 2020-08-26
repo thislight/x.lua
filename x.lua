@@ -105,6 +105,8 @@ local function main(args)
             flags.packages_file = packages_file_path
         elseif value == '--show-debug-info' then
             flags.show_debug_info = true
+        elseif value == '--help' then
+            flags.show_help = true
         elseif (not string_startswith(value, "-")) then
             flags.script = value
         end
@@ -118,6 +120,11 @@ local function main(args)
         print("Use Package List File: " ..
                   tostring(table.pack(io.open(flags.packages_file))[1]))
         print("luarepl: " .. tostring(pcall(require, 'repl')))
+    elseif flags.show_help then
+        print("x.lua \t\t\t start REPL (by lua-repl)")
+        print("x.lua <lua_file_path> \t run a script with x.lua's features")
+        print("x.lua --show-debug-info  show debug infomation")
+        print("x.lua --help \t\t print this message")
     else
         repl(flags)
     end
